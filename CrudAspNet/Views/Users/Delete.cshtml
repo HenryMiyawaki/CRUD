@@ -1,0 +1,79 @@
+﻿@model CrudAspNet.Models.User
+
+@{
+    ViewBag.Title = "Apagar Usuário";
+}
+
+
+
+<div class="row mt-5">
+
+        <a class="btn btn-outline-dark rounded-circle mr-2" href="/Users/Index">
+            <p class="m-1"><</p>
+        </a>
+
+        <h2>Apagar Usuário</h2>
+
+</div>
+
+<div class="mt-3">
+    <h6>Tem certeza de que deseja apagar o usuário?</h6>
+
+    <hr />
+
+    <div class="card bg-dark" style="width: 18rem;">
+        <div class="card-header">
+            <ul class="nav nav-pills card-header-pills">
+                <li class="nav-item">
+                    <a class="btn text-light" href="/Users">Usuário</a>
+                </li>
+                <li class="nav-item ml-5">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Apagar" class="btn btn-outline-light" />
+                        </div>
+                    }
+                </li>
+            </ul>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item border-dark">
+                <dl class="row">
+                    <dt class="col-5">
+                        @Html.DisplayNameFor(model => model.Nome):
+                    </dt>
+
+                    <dd class="col-7">
+                        @Html.DisplayFor(model => model.Nome)
+                    </dd>
+                </dl>
+            </li>
+            <li class="list-group-item border-dark">
+                <dl class="row">
+                    <dt class="col-5">
+                        @Html.DisplayNameFor(model => model.Cpf):
+                    </dt>
+
+                    <dd class="col-7">
+                        @Html.DisplayFor(model => model.Cpf)
+                    </dd>
+                </dl>
+            </li>
+            <li class="list-group-item border-dark">
+                <dl class="row">
+                    <dt class="col-5">
+                        @Html.DisplayNameFor(model => model.Telefone):
+                    </dt>
+
+                    <dd class="col-7">
+                        @Html.DisplayFor(model => model.Telefone)
+                    </dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+
+</div>

@@ -1,0 +1,70 @@
+﻿@model CrudAspNet.Models.User
+
+@{
+    ViewBag.Title = "Visualizar Usuário";
+}
+
+
+<div class="row mt-5">
+    <a class="btn btn-outline-dark rounded-circle mr-2" href="/Users/Index">
+        <p class="m-1"><</p>
+    </a>
+
+    <h2>Visualizar Usuário</h2>
+</div>
+
+<div>
+    <hr />
+
+    <div class="card bg-dark" style="width: 18rem;">
+        <div class="card-header">
+            <ul class="nav nav-pills card-header-pills">
+                <li class="nav-item">
+                    <a class="btn text-light" href="/Users">Usuário</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn text-light" href="@Url.Action("Edit","Users", new { id = Model.UserId })">Alterar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn text-light" href="@Url.Action("Delete","Users", new { id = Model.UserId })">Apagar</a>
+                </li>
+            </ul>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item border-dark">
+                <dl class="row">
+                    <dt class="col-5">
+                        @Html.DisplayNameFor(model => model.Nome):
+                    </dt>
+
+                    <dd class="col-7">
+                        @Html.DisplayFor(model => model.Nome)
+                    </dd>
+                </dl>
+            </li>
+            <li class="list-group-item border-dark">
+                <dl class="row">
+                    <dt class="col-5">
+                        @Html.DisplayNameFor(model => model.Cpf):
+                    </dt>
+
+                    <dd class="col-7">
+                        @Html.DisplayFor(model => model.Cpf)
+                    </dd>
+                </dl>
+            </li>
+            <li class="list-group-item border-dark">
+                <dl class="row">
+                    <dt class="col-5">
+                        @Html.DisplayNameFor(model => model.Telefone):
+                    </dt>
+
+                    <dd class="col-7">
+                        @Html.DisplayFor(model => model.Telefone)
+                    </dd>
+                </dl>
+            </li>    
+        </ul>
+    </div>
+
+</div>

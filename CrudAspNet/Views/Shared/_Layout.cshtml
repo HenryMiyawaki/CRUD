@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - CRUD</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSup"
+                        aria-controls="navbarSup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="nav-item"></span>
+                    <span class="nav-item"></span>
+                    <span class="nav-item"></span>
+                </button>
+                @Html.ActionLink("CRUD", "Create", "Users", new { @class = "navbar-brand" })
+            </div>
+
+            <div class="navbar-collapse collapse" id="navbarSup">
+                <ul class="nav navbar-nav mr-auto">
+
+                    <li class="nav-item"><a class="nav-link" href="@Url.Action("Create","Users")">Início</a></li>
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            Usuário
+                        </a>
+
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/Users/Index">Registros</a>
+                        <a class="dropdown-item" href="/Users/Create">Criar</a>
+                    </div>
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - CRUD, Henry Miyawaki</p>
+        </footer>
+    </div>
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
